@@ -1,6 +1,6 @@
 # Who Broke it Last
 ===============================
-##BSaaS (Build Shaming as a Service) [![Build Status](http://circleci-badges-max.herokuapp.com/img/gardncl/whobrokeitlast?token=)](https://circleci.com/gh/gardncl/whobrokeitlast)
+##BSaaS (Build Shaming as a Service) [![CircleCI](https://circleci.com/gh/gardncl/whobrokeitlast.svg?style=svg)](https://circleci.com/gh/gardncl/whobrokeitlast)
 
 
 ## Stack:  
