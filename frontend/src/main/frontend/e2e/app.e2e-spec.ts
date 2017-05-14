@@ -1,10 +1,10 @@
-import { Ng2bootPage } from './app.po';
+import { WhobrokeitlastPage } from './app.po';
 
-describe('ng2boot App', () => {
-  let page: Ng2bootPage;
+describe('whobrokeitlast App', () => {
+  let page: WhobrokeitlastPage;
 
   beforeEach(() => {
-    page = new Ng2bootPage();
+    page = new WhobrokeitlastPage();
   });
 
   it('should display message saying app works', () => {

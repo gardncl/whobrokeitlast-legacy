@@ -6,7 +6,7 @@
     <artifactId>frontend</artifactId>
 
     <name>frontend</name>
-    <description>Who Broke it Last frontend</description>
+    <description>Who Broke it Last Frontend</description>
 
     <parent>
         <groupId>gardncl.whobrokeitlast</groupId>

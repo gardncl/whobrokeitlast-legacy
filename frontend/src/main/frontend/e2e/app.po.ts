@@ -1,6 +1,6 @@
-import { browser, element, by } from 'protractor';
+import { browser, by, element } from 'protractor';
 
-export class Ng2bootPage {
+export class WhobrokeitlastPage {
   navigateTo() {
     return browser.get('/');
   }

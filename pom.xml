@@ -5,7 +5,7 @@
 
 	<groupId>gardncl.whobrokeitlast</groupId>
 	<artifactId>parent</artifactId>
-	<version>${project.version}</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>parent</name>
@@ -22,27 +22,10 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-		<project.groupid>gardncl.whobrokeitlast</project.groupid>
-		<project.version>0.0.1-SNAPSHOT</project.version>
 	</properties>
 
 	<modules>
 		<module>frontend</module>
 		<module>backend</module>
 	</modules>
-
-	<dependencyManagement>
-		<dependencies>
-            <dependency>
-                <groupId>${project.groupid}</groupId>
-                <artifactId>frontend</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>${project.groupid}</groupId>
-                <artifactId>backend</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-		</dependencies>
-	</dependencyManagement>
 </project>
