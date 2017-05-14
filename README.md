@@ -11,10 +11,3 @@ Application for tracking who has broken the current development/test/production 
 * Gradle  
 * Travis CI  
 * NPM
-
-#### Download dependencies:
-```bash
-gradle build
-npm install
-bower install
-```
