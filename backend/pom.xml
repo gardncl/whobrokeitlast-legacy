@@ -38,6 +38,13 @@
         </dependency>
 
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+            <version>1.4.1.RELEASE</version>
+        </dependency>
+
+
+        <dependency>
             <groupId>gardncl.whobrokeitlast</groupId>
             <artifactId>frontend</artifactId>
             <version>${project.version}</version>
