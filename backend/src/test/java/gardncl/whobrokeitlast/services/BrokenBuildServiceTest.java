@@ -36,7 +36,7 @@ public class BrokenBuildServiceTest {
         developer3.setLastBreak(new Date(10000000));
         project.setDevelopers(Arrays.asList(developer1, developer2, developer3));
 
-        assertEquals(developer3.getLastBreak(), brokenBuildService.getLastBreak(project));
+        assertEquals(developer3, brokenBuildService.getLastBreak(project));
     }
 
 }

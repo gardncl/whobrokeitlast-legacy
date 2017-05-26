@@ -17,7 +17,7 @@ import java.util.List;
  */
 
 @Entity
-public class Developer {
+public class Developer implements Comparable<Developer> {
 
     @Id
     @GeneratedValue
@@ -54,5 +54,10 @@ public class Developer {
 
     public void setNumberOfBrokenBuilds(Integer numberOfBrokenBuilds) {
         this.numberOfBrokenBuilds = numberOfBrokenBuilds;
+    }
+
+    @Override
+    public int compareTo(Developer o) {
+        return this.getLastBreak().compareTo(o.getLastBreak());
     }
 }

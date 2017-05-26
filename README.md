@@ -5,9 +5,10 @@ Application for tracking who has broken the current development/test/production 
 * MySQL (AWS RDS)  
 * Spring Boot  
 * Java   
-* AngularJS
+* Angular
 
 ## Tools:  
 * Gradle  
 * Travis CI  
 * NPM
+* AngularCLI
