@@ -1,3 +1,4 @@
 ignore:
+  - "backend/src/main/java/gardncl/whobrokeitlast/WhoBrokeItLastApplication.java"
   - "backend/src/main/java/gardncl/whobrokeitlast/models/"
   - "backend/src/main/java/gardncl/whobrokeitlast/dao/"
