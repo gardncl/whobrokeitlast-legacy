@@ -35,7 +35,7 @@ public class Project {
         this.projectTitle = projectTitle;
     }
 
-    public List getDevelopers() {
+    public List<Developer> getDevelopers() {
         return developers;
     }
 
