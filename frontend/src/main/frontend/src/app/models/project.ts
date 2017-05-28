@@ -5,4 +5,8 @@ export class Project {
   projectTitle: string;
   developers: Developer[];
   build: Build;
+
+  constructor(projectTitle: string) {
+    this.projectTitle = projectTitle;
+  }
 }

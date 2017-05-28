@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>New Project Form</h1>
+  {{diagnostic}}
+  <form #projectForm="ngForm">
+    <div>
+      <label for="projectTitle">Project Title</label>
+      <input type="text" id="projectTitle" required [(ngModel)]="newProject.projectTitle" name="title">
+    </div>
+    <button type="button" (click)="clearProject(); projectForm.reset()" >Clear Project</button>
+    <button type="submit" (click)="addProject(); onSubmit(); projectForm.reset()" [disabled]="!projectForm.form.valid">Submit</button>
+  </form>
+</div>
