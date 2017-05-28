@@ -1,4 +1,4 @@
-# Whobrokeitlast
+# Whobrokeitlast [![bitHound Code](https://www.bithound.io/github/gardncl/whobrokeitlast/badges/code.svg)](https://www.bithound.io/github/gardncl/whobrokeitlast)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.3.
 
