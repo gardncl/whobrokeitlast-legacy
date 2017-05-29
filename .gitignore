@@ -11,3 +11,6 @@ mvnw.cmd
 *.iws
 *.iml
 *.ipr
+
+/backend/.gitignore
+/frontend/.gitignore
