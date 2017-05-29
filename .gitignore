@@ -12,6 +12,6 @@ mvnw.cmd
 *.iml
 *.ipr
 
-/backend/.gitignore
-/frontend/.gitignore
 /backend/src/main/resources/application.properties
+/frontend/src/main/frontend/package.json
+/frontend/src/main/frontend/proxy.conf.json
