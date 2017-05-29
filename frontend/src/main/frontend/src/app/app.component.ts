@@ -21,6 +21,7 @@ export class AppComponent {
   onAddProject(project: Project) {
     this.projectDataService.addProject(project);
     this.newProject = new Project("");
+    console.log(this.projectDataService.getProjectById(1));
   }
 
   get projects() {
