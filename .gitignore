@@ -14,3 +14,4 @@ mvnw.cmd
 
 /backend/.gitignore
 /frontend/.gitignore
+/backend/src/main/resources/application.properties
