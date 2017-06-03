@@ -1,5 +1,5 @@
-backend/src/main/java/gardncl/whobrokeitlast/CorsConfig.java merge=ours
-backend/src/main/resources/application.properties merge=ours
-frontend/src/main/frontend/package.json merge=ours
-frontend/src/main/frontend/proxy.conf.json merge=ours
-.gitignore merge=ours
+backend/src/main/java/gardncl/whobrokeitlast/CorsConfig.java merge=keepMine
+backend/src/main/resources/application.properties merge=keepMine
+frontend/src/main/frontend/package.json merge=keepMine
+frontend/src/main/frontend/proxy.conf.json merge=keepMine
+.gitignore merge=keepMine
