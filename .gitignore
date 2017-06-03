@@ -11,3 +11,6 @@ mvnw.cmd
 *.iws
 *.iml
 *.ipr
+
+backend/src/main/java/gardncl/whobrokeitlast/CorsConfig.java
+frontend/src/main/frontend/proxy.conf.json
