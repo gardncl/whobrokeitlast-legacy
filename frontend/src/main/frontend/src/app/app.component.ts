@@ -15,34 +15,22 @@ export class AppComponent implements OnInit {
   newProject: Project = new Project("");
   observableProject: Project;
   projects: Project[];
-  errorMessage: string;
 
-  constructor(private projectDataService: ProjectDataService) {}
+  constructor(private _projectDataService: ProjectDataService) {}
 
   ngOnInit() {
-    this.projectDataService.getProjectById(1)
+    this._projectDataService.getProjectById(1)
       .subscribe(responseProjectData => this.observableProject = responseProjectData);
 
-    this.projectDataService.getProjects()
+    this._projectDataService.getProjects()
       .subscribe(responseProjectData => this.projects = responseProjectData);
-
-
-  }
-
-  getProject() {
-    this.projectDataService.getProjectById(1).subscribe(
-      project => this.newProject = project,
-      error => this.errorMessage = <any>error
-    );
   }
 
   onAddProject(project: Project) {
-    this.projectDataService.addProject(project);
+    this._projectDataService.addProject(project)
+      .subscribe(responseProjectData => this.observableProject = responseProjectData);
+    console.log(this.observableProject);
     this.newProject = new Project("");
-  }
-
-  get getProjects() {
-    return this.projectDataService.getProjects();
   }
 
   get diagnostic() { return JSON.stringify(this.observableProject); }

@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Project} from "app/models/project";
 import {Build} from "../models/build";
 import {Developer} from "../models/developer";
 import {environment} from "../../environments/environment";
-import {Http, Response} from "@angular/http";
+import {Http, Response, Headers, RequestOptions} from "@angular/http";
 import {Observable} from "rxjs/Observable";
 import "rxjs/add/operator/map";
 import 'rxjs/add/operator/catch';
@@ -12,27 +12,31 @@ const API_URL = environment.apiUrl + '/projects';
 
 @Injectable()
 export class ProjectDataService {
-  private projectUrl = '/api/projects';
-  constructor(private http: Http) { }
+
+
+  constructor(private _http: Http) { }
 
   getProjects(): Observable<Project[]> {
-    return this.http
+    return this._http
       .get(`${API_URL}`)
       .map((response: Response) => response.json())
       .catch(this.handleError);
   }
 
   getProjectById(id: number): Observable<Project> {
-    return this.http
+    return this._http
       .get(`${API_URL}/${id}`)
-      .map((response: Response) => response.json())
+      .map(this.extractData)
       .catch(this.handleError);
   }
 
-  addProject(project: Project): Project {
-    //TODO: WIRE IN API TO MAKE THIS CALL REAL
-    console.log(JSON.parse(this.getProjectById(1)['_body']));
-    return project;
+  addProject(project: Project): Observable<Project> {
+    console.log(JSON.stringify(project));
+    let headers = new Headers({ 'Content-Type': 'application/json; charset=UTF-8' });
+    let options = new RequestOptions({ headers: headers });
+    return this._http.post(`${API_URL}`, JSON.stringify(project), options)
+      .map(this.extractData)
+      .catch(this.handleError);
   }
 
   private handleError (error: Response | any) {
@@ -40,8 +44,8 @@ export class ProjectDataService {
     return Observable.throw(error);
   }
 
-  private extractData(res: Response) {
-    let body = res.json();
+  private extractData(response: Response) {
+    let body = response.json();
     return body || { };
   }
 
