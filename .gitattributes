@@ -1,0 +1,4 @@
+backend/src/main/java/gardncl/whobrokeitlast/CorsConfig.java text
+backend/src/main/resources/application.properties text
+frontend/src/main/frontend/package.json text
+frontend/src/main/frontend/proxy.conf.json text

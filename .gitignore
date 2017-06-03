@@ -11,10 +11,3 @@ mvnw.cmd
 *.iws
 *.iml
 *.ipr
-
-#Develop branch:
-
-/backend/src/main/resources/application.properties
-/frontend/src/main/frontend/package.json
-/frontend/src/main/frontend/proxy.conf.json
-/backend/src/main/java/gardncl/whobrokeitlast/CorsConfig.java
