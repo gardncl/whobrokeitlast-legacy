@@ -16,10 +16,10 @@ export class ProjectDataService {
 
   constructor(private _http: Http) { }
 
-  getProjects(): Observable<Project[]> {
+  getProjectsPagination(offset: number = 0, limit: number = 20): Observable<Project[]> {
     return this._http
-      .get(`${API_URL}`)
-      .map((response: Response) => response.json())
+      .get(`${API_URL}/?offset=${offset}&limit=${limit}`)
+      .map(this.extractProjectList)
       .catch(this.handleError);
   }
 
@@ -46,6 +46,13 @@ export class ProjectDataService {
 
   private extractData(response: Response) {
     let body = response.json();
+    delete body._links;
+    return body || { };
+  }
+
+  private extractProjectList(response: Response) {
+    let body = response.json()._embedded.projects;
+    body.forEach(body => delete body._links);
     return body || { };
   }
 

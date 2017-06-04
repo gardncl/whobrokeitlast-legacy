@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
     this._projectDataService.getProjectById(1)
       .subscribe(responseProjectData => this.observableProject = responseProjectData);
 
-    this._projectDataService.getProjects()
+    this._projectDataService.getProjectsPagination()
       .subscribe(responseProjectData => this.projects = responseProjectData);
   }
 

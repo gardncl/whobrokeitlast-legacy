@@ -1,0 +1,9 @@
+<div>
+  <app-loader [loading]="loading" [failed]="failed"> </app-loader>
+</div>
+<div class="row">
+  <div class="col s12 m4 l3" *ngFor="let project of projects">
+    <app-project-list-entry [project]="project"></app-project-list-entry>
+  </div>
+</div>
+<app-pagination-component [offset]="offset" [limit]="limit" [size]="count"></app-pagination-component>
