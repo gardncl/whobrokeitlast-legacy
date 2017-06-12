@@ -10,7 +10,6 @@ import { ProjectDataService } from './services/project-data.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'app works!';
 
   newProject: Project = new Project("");
   observableProject: Project;
@@ -21,15 +20,11 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this._projectDataService.getProjectById(1)
       .subscribe(responseProjectData => this.observableProject = responseProjectData);
-
-    this._projectDataService.getProjects()
-      .subscribe(responseProjectData => this.projects = responseProjectData);
   }
 
   onAddProject(project: Project) {
     this._projectDataService.addProject(project)
       .subscribe(responseProjectData => this.observableProject = responseProjectData);
-    console.log(this.observableProject);
     this.newProject = new Project("");
   }
 

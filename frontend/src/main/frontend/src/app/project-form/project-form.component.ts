@@ -29,5 +29,4 @@ export class ProjectFormComponent {
     this.newProject = new Project("");
   }
 
-  get diagnostic() { return JSON.stringify(this.newProject); }
 }
