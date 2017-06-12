@@ -6,4 +6,5 @@
     <app-project-list-entry [project]="project"></app-project-list-entry>
   </div>
 </div>
-<app-pagination-component [offset]="offset" [limit]="limit" [size]="count"></app-pagination-component>
+<app-pagination-component [offset]="offset" [limit]="limit" [size]="count" (pageChange)="onPageChange($event)"></app-pagination-component>
+

@@ -10,7 +10,6 @@ export class ProjectListEntryComponent implements OnInit {
 
 
   ngOnInit() {
-    console.log(this.project);
   }
 
   @Input() project: Project;

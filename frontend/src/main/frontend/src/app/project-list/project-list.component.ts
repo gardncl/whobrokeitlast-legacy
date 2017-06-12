@@ -14,13 +14,12 @@ export class ProjectListComponent implements OnInit {
   projects: Project[];
   count: number = 0;
   offset: number = 0;
-  limit: number = 20;
+  limit: number = 5;
   loading: boolean = false;
   failed: boolean = false;
 
   ngOnInit() {
     this.getProjects(this.offset, this.limit);
-
   }
 
   getProjects(offset: number, limit: number) {
@@ -28,13 +27,18 @@ export class ProjectListComponent implements OnInit {
     this.loading = true;
     this.failed = false;
     this._projectDataService.getProjectsPagination(offset, limit).subscribe(result => {
-      this.projects = result;
-      this.count = result.length;
+      this.projects = result.projects;
+      this.count = result.count;
       this.loading = false;
     }, () => {
       this.loading = false;
       this.failed = true;
     });
+  }
+
+  onPageChange(offset) {
+    this.offset = offset;
+    this.getProjects(this.offset, this.limit);
   }
 
 }
