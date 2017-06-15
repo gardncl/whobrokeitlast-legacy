@@ -15,7 +15,7 @@ export class ProjectGridComponent implements OnInit {
   projects: Project[];
   count: number = 0;
   offset: number = 0;
-  limit: number = 5;
+  limit: number = 10;
   loading: boolean = false;
   failed: boolean = false;
   private rowData: any[];
@@ -27,8 +27,7 @@ export class ProjectGridComponent implements OnInit {
       {
         headerName: "Title",
         field: "projectTitle",
-        cellRendererFramework: ProjectGridEntryComponent,
-        width: 100
+        cellRendererFramework: ProjectGridEntryComponent
       },
 
     ];
