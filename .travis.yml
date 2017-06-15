@@ -6,7 +6,7 @@ sudo: false
 script: "mvn cobertura:cobertura"
 
 notifications:
-  webooks:
+  webhooks:
     urls:
       - http://lowcost-env.x8pcftmhaw.us-east-1.elasticbeanstalk.com/
 
