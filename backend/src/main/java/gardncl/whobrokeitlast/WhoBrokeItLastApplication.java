@@ -3,7 +3,7 @@ package gardncl.whobrokeitlast;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplicatio
+@SpringBootApplication
 public class WhoBrokeItLastApplication {
 
 	public static void main(String[] args) {
