@@ -11,7 +11,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 @Service
-public class ParseService {
+public class PercentEncodingParseService {
 
     private static Map<String, String> percentEncodingToJsonMap;
 
