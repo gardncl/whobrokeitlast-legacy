@@ -4,6 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>backend</artifactId>
+    <packaging>war</packaging>
 
     <name>backend</name>
     <description>Who Broke it Last Backend</description>
@@ -13,6 +14,10 @@
         <artifactId>parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
+
+    <properties>
+        <start-class>gardncl.whobrokeitlast.WhoBrokeItLastApplication</start-class>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -49,6 +54,11 @@
             <artifactId>frontend</artifactId>
             <version>${project.version}</version>
             <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.appengine</groupId>
+            <artifactId>appengine-api-1.0-sdk</artifactId>
+            <version>1.9.44</version>
         </dependency>
     </dependencies>
 

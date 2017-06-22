@@ -11,6 +11,7 @@ import java.util.List;
  */
 
 @Entity
+@Table(uniqueConstraints={@UniqueConstraint(columnNames = {"projectTitle"})})
 public class Project {
 
     @Id

@@ -1,0 +1,100 @@
+{
+  "id": 243457763,
+  "repository": {
+    "id": 13442836,
+    "name": "whobrokeitlast",
+    "owner_name": "gardncl",
+    "url": null
+  },
+  "number": "49",
+  "config": {
+    "language": "java",
+    "jdk": [
+      "oraclejdk8"
+    ],
+    "sudo": false,
+    "script": "mvn cobertura:cobertura",
+    "notifications": {
+      "webhooks": {
+        "urls": [
+          "http://lowcost-env.x8pcftmhaw.us-east-1.elasticbeanstalk.com/"
+        ]
+      }
+    },
+    "after_success": [
+      "bash <(curl -s https://codecov.io/bash)"
+    ],
+    ".result": "configured",
+    "group": "stable",
+    "dist": "precise"
+  },
+  "status": 1,
+  "result": 1,
+  "status_message": "Errored",
+  "result_message": "Errored",
+  "started_at": "2017-06-15T22:36:24Z",
+  "finished_at": "2017-06-15T22:44:39Z",
+  "duration": 495,
+  "build_url": "https://travis-ci.org/gardncl/whobrokeitlast/builds/243457763",
+  "commit_id": 70635589,
+  "commit": "2b731dd7fb97d461a54e9b12038994c7243315c5",
+  "base_commit": null,
+  "head_commit": null,
+  "branch": "develop",
+  "message": "fail try 2 for webhook",
+  "compare_url": "https://github.com/gardncl/whobrokeitlast/compare/dbe08c2f0a2b...2b731dd7fb97",
+  "committed_at": "2017-06-15T22:36:14Z",
+  "author_name": "gardncl",
+  "author_email": "gardncl@gmail.com",
+  "committer_name": "gardncl",
+  "committer_email": "gardncl@gmail.com",
+  "matrix": [
+    {
+      "id": 243457764,
+      "repository_id": 13442836,
+      "parent_id": 243457763,
+      "number": "49.1",
+      "state": "finished",
+      "config": {
+        "language": "java",
+        "jdk": "oraclejdk8",
+        "sudo": false,
+        "script": "mvn cobertura:cobertura",
+        "notifications": {
+          "webhooks": {
+            "urls": [
+              "http://lowcost-env.x8pcftmhaw.us-east-1.elasticbeanstalk.com/"
+            ]
+          }
+        },
+        "after_success": [
+          "bash <(curl -s https://codecov.io/bash)"
+        ],
+        ".result": "configured",
+        "group": "stable",
+        "dist": "precise",
+        "os": "linux"
+      },
+      "status": 1,
+      "result": 1,
+      "commit": "2b731dd7fb97d461a54e9b12038994c7243315c5",
+      "branch": "develop",
+      "message": "fail try 2 for webhook",
+      "compare_url": "https://github.com/gardncl/whobrokeitlast/compare/dbe08c2f0a2b...2b731dd7fb97",
+      "started_at": "2017-06-15T22:36:24Z",
+      "finished_at": "2017-06-15T22:44:39Z",
+      "committed_at": "2017-06-15T22:36:14Z",
+      "author_name": "gardncl",
+      "author_email": "gardncl@gmail.com",
+      "committer_name": "gardncl",
+      "committer_email": "gardncl@gmail.com",
+      "allow_failure": false
+    }
+  ],
+  "type": "push",
+  "state": "errored",
+  "pull_request": false,
+  "pull_request_number": null,
+  "pull_request_title": null,
+  "tag": null
+}

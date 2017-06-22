@@ -12,6 +12,10 @@ import { PaginationComponentComponent } from './pagination-component/pagination-
 import { ProjectListComponent } from './project-list/project-list.component';
 import { ProjectListEntryComponent } from './project-list/project-list-entry/project-list-entry.component';
 import { LoaderComponent } from './shared/loader/loader.component';
+import { ProjectGridComponent } from './project-grid/project-grid.component';
+import { ProjectGridEntryComponent } from './project-grid/project-grid-entry/project-grid-entry.component';
+import { AgGridModule } from "ag-grid-angular/main";
+
 
 @NgModule({
   declarations: [
@@ -22,12 +26,17 @@ import { LoaderComponent } from './shared/loader/loader.component';
     PaginationComponentComponent,
     ProjectListComponent,
     ProjectListEntryComponent,
-    LoaderComponent
+    LoaderComponent,
+    ProjectGridComponent,
+    ProjectGridEntryComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AgGridModule.withComponents(
+      [ProjectGridEntryComponent]
+    )
   ],
   providers: [ProjectDataService],
   bootstrap: [AppComponent]

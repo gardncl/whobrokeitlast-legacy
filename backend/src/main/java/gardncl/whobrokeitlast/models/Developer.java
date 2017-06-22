@@ -2,13 +2,13 @@ package gardncl.whobrokeitlast.models;
 
 import org.hibernate.validator.constraints.Email;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+
+import static java.util.Arrays.asList;
 
 
 /**
@@ -17,23 +17,32 @@ import java.util.List;
  */
 
 @Entity
+@Table(uniqueConstraints={@UniqueConstraint(columnNames = {"userName", "email"})})
 public class Developer implements Comparable<Developer> {
 
     @Id
     @GeneratedValue
     private Long id;
     @NotNull
+    private String userName;
     private String firstName;
-    @NotNull
     private String lastName;
     private Date lastBreak;
-    private Integer numberOfBrokenBuilds;
-    @OneToMany(targetEntity = Project.class)
-    private List projects;
+    private Integer numberOfBrokenBuilds=0;
+    @OneToMany
+    private List<Project> projects;
     @Email
     private String email;
 
     public Developer() {
+    }
+
+    public Developer(String userName,
+                     String email,
+                     Project project) {
+        this.userName = userName;
+        this.email = email;
+        this.projects = asList(project);
     }
 
     public Long getId() {
@@ -45,6 +54,7 @@ public class Developer implements Comparable<Developer> {
     }
 
     public void setLastBreak(Date lastBreak) {
+        ++numberOfBrokenBuilds;
         this.lastBreak = lastBreak;
     }
 
