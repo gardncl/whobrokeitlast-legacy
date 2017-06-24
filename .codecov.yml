@@ -3,3 +3,4 @@ ignore:
   - "backend/src/main/java/gardncl/whobrokeitlast/ServletInitializer.java"
   - "backend/src/main/java/gardncl/whobrokeitlast/models/"
   - "backend/src/main/java/gardncl/whobrokeitlast/dao/"
+  - "backend/src/main/java/gardncl/whobrokeitlast/dto/"
