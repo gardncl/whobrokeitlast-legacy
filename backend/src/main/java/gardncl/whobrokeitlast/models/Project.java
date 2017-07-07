@@ -11,11 +11,11 @@ import java.util.List;
  */
 
 @Entity
-@Table(uniqueConstraints={@UniqueConstraint(columnNames = {"projectTitle"})})
+@Table(uniqueConstraints={@UniqueConstraint(columnNames = {"id","projectTitle"})})
 public class Project {
 
     @Id
-    @GeneratedValue
+    @NotNull
     private Long id;
     @NotNull
     private String projectTitle;
@@ -23,6 +23,14 @@ public class Project {
     private List developers;
     @OneToOne
     private Build build;
+
+    public Project() {
+    }
+
+    public Project(Long id, String projectTitle) {
+        this.id = id;
+        this.projectTitle = projectTitle;
+    }
 
     public Long getId() {
         return id;

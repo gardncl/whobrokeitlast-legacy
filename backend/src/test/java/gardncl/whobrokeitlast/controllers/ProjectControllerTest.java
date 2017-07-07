@@ -30,7 +30,7 @@ public class ProjectControllerTest {
     private BrokenBuildService brokenBuildService;
 
     private MockMvc mockMvc;
-    private final String baseUrl = "/project/{id}";
+    private final String baseUrl = "/project";
 
     @Before
     public void setup() {
@@ -43,7 +43,7 @@ public class ProjectControllerTest {
     @Test
     public void getLastBreak() throws Exception {
         MvcResult mvcResult = mockMvc
-                .perform(get(baseUrl + "/lastbreak",0))
+                .perform(get(baseUrl + "/{id}/lastbreak",0))
                 .andExpect(status().isOk())
                 .andReturn();
     }
