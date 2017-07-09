@@ -15,6 +15,9 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
+import java.util.Date;
+
+import static java.util.Arrays.asList;
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.times;
@@ -51,10 +54,28 @@ public class ProjectControllerTest {
 
     @Test
     public void getLastBreak() throws Exception {
+        final Long id = 1L;
+        final Project project = new Project();
+        final Developer developer = new Developer();
+        final Date lastBreak = new Date(1000);
+
+        developer.setLastBreak(lastBreak);
+        project.setDevelopers(asList(developer));
+
+        doReturn(project)
+                .when(projectDao)
+                .findOne(id);
+
         MvcResult mvcResult = mockMvc
-                .perform(get(baseUrl + "/{id}/lastbreak",0))
+                .perform(get(baseUrl + "/{id}/lastbreak",id))
                 .andExpect(status().isOk())
                 .andReturn();
+
+        verify(projectDao, times(1))
+                .findOne(id);
+
+        verify(brokenBuildService, times(1))
+                .getLastBreak(project);
     }
 
     @Test
