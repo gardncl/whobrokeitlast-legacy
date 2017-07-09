@@ -31,7 +31,7 @@ public class ProjectController {
         return brokenBuildService.getLastBreak(projectDao.findOne(id));
     }
 
-    @RequestMapping(value = "/{projectTitle}/lastbreak", method = RequestMethod.POST)
+    @RequestMapping(value = "/{projectTitle}/owner/{owner}", method = RequestMethod.POST)
     public Project addProject(@PathVariable("projectTitle") String projectTitle, @PathVariable("owner") String owner) throws IOException {
         return projectService.insertProject(projectTitle, owner);
     }
