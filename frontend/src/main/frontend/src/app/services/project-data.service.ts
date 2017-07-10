@@ -7,7 +7,7 @@ import "rxjs/add/operator/map";
 import "rxjs/add/operator/catch";
 import {ProjectPagination} from "../models/project-pagination";
 
-const API_URL = environment.apiUrl + '/projects';
+const API_URL = environment.apiUrl + '/api/projects';
 
 @Injectable()
 export class ProjectDataService {
@@ -29,10 +29,11 @@ export class ProjectDataService {
       .catch(this.handleError);
   }
 
-  addProject(project: Project): Observable<Project> {
+  addProject(project: Project, person: string): Observable<Project> {
     let headers = new Headers({ 'Content-Type': 'application/json; charset=UTF-8' });
     let options = new RequestOptions({ headers: headers });
-    return this._http.post(`${API_URL}`, JSON.stringify(project), options)
+    let url = `${environment.apiUrl}`.concat("/project/",project.projectTitle,"/owner/",person);
+    return this._http.post(url, options)
       .map(this.extractData)
       .catch(this.handleError);
   }

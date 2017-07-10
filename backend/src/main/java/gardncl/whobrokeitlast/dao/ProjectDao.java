@@ -6,4 +6,6 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 
 public interface ProjectDao extends PagingAndSortingRepository<Project, Long> {
 
+    Project findByProjectTitle(String projectTitle);
+
 }

@@ -14,6 +14,7 @@ export class AppComponent implements OnInit {
   newProject: Project = new Project("");
   observableProject: Project;
   projects: Project[];
+  currentUser: string = "gardncl";
 
   constructor(private _projectDataService: ProjectDataService) {}
 
@@ -23,7 +24,7 @@ export class AppComponent implements OnInit {
   }
 
   onAddProject(project: Project) {
-    this._projectDataService.addProject(project)
+    this._projectDataService.addProject(project,this.currentUser)
       .subscribe(responseProjectData => this.observableProject = responseProjectData);
     this.newProject = new Project("");
   }
