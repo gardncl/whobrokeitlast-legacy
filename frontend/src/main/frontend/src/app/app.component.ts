@@ -29,5 +29,9 @@ export class AppComponent implements OnInit {
     this.newProject = new Project("");
   }
 
+  onSwitchFlip(obj: string) {
+    console.log(obj);
+  }
+
   get diagnostic() { return JSON.stringify(this.observableProject); }
 }

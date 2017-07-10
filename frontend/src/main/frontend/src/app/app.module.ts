@@ -15,6 +15,7 @@ import { LoaderComponent } from './shared/loader/loader.component';
 import { ProjectGridComponent } from './project-grid/project-grid.component';
 import { ProjectGridEntryComponent } from './project-grid/project-grid-entry/project-grid-entry.component';
 import { AgGridModule } from "ag-grid-angular/main";
+import { UiSwitchModule } from 'angular2-ui-switch';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { AgGridModule } from "ag-grid-angular/main";
     BrowserModule,
     FormsModule,
     HttpModule,
+    UiSwitchModule,
     AgGridModule.withComponents(
       [ProjectGridEntryComponent]
     )
