@@ -3,11 +3,5 @@
   <app-project-list-header (add)="onAddProject($event)" ></app-project-list-header>
   <app-project-list></app-project-list>
   <app-project-grid></app-project-grid>
-
-  <ul>
-    <li *ngFor="let repo of repositories">
-      <ui-switch (change)="onSwitchFlip($event, repo.title)"></ui-switch>
-      {{ repo.title }}
-    </li>
-  </ul>
+  <app-repo-switch-list [repositories]="repositories"></app-repo-switch-list>
 </section>

@@ -17,6 +17,8 @@ import { ProjectGridEntryComponent } from './project-grid/project-grid-entry/pro
 import { AgGridModule } from "ag-grid-angular/main";
 import { UiSwitchModule } from '../../node_modules/angular2-ui-switch/src';
 import {RepositoryDataService} from "./services/repository-data.service";
+import { RepoSwitchComponent } from './repo-switch-list/repo-switch/repo-switch.component';
+import { RepoSwitchListComponent } from './repo-switch-list/repo-switch-list.component';
 
 
 @NgModule({
@@ -30,7 +32,9 @@ import {RepositoryDataService} from "./services/repository-data.service";
     ProjectListEntryComponent,
     LoaderComponent,
     ProjectGridComponent,
-    ProjectGridEntryComponent
+    ProjectGridEntryComponent,
+    RepoSwitchComponent,
+    RepoSwitchListComponent
   ],
   imports: [
     BrowserModule,
