@@ -16,6 +16,7 @@ import { ProjectGridComponent } from './project-grid/project-grid.component';
 import { ProjectGridEntryComponent } from './project-grid/project-grid-entry/project-grid-entry.component';
 import { AgGridModule } from "ag-grid-angular/main";
 import { UiSwitchModule } from '../../node_modules/angular2-ui-switch/src';
+import {RepositoryDataService} from "./services/repository-data.service";
 
 
 @NgModule({
@@ -40,7 +41,7 @@ import { UiSwitchModule } from '../../node_modules/angular2-ui-switch/src';
       [ProjectGridEntryComponent]
     )
   ],
-  providers: [ProjectDataService],
+  providers: [ProjectDataService, RepositoryDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

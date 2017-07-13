@@ -49,7 +49,7 @@ export class ProjectDataService {
     return body || { };
   }
 
-  private extractProjectList(response: Response) {
+  private extractProjectList(response: Response): ProjectPagination {
     let projectList = response.json()._embedded.projects;
     projectList.forEach(body => delete body._links);
     var projects = [];
