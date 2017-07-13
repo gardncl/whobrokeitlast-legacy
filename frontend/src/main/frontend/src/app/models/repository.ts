@@ -1,10 +1,9 @@
-import {Url} from "url";
 export class Repository {
-  owner: string;
+  title: string;
   url: string;
 
-  constructor(owner: string, url: string) {
-    this.owner = owner;
+  constructor(title: string, url: string) {
+    this.title = title;
     this.url = url;
   }
 }
