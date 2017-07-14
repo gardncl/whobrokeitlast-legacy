@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Repository} from "../../models/repository";
+import {RepositoryDataService} from "../../services/repository-data.service";
 
 @Component({
   selector: 'app-repo-switch',
@@ -8,13 +9,17 @@ import {Repository} from "../../models/repository";
 })
 export class RepoSwitchComponent implements OnInit {
 
+
+  constructor(private _repositoryDataService: RepositoryDataService) {
+  }
+
   ngOnInit() {
   }
 
   @Input() repository: Repository;
 
-  onSwitchFlip(obj: string, owner: string) {
-    console.log(obj + " "+ owner);
+  onSwitchFlip(obj: string) {
+    this._repositoryDataService.repositorySwitch(this.repository).subscribe();
   }
 
 }

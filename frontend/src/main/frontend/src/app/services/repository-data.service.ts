@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import {environment} from "../../environments/environment";
-import {Http, Response} from "@angular/http";
+import {Headers, Http, RequestOptions, Response} from "@angular/http";
 import {Observable} from "rxjs/Observable";
 import {Repository} from "../models/repository";
 import "rxjs/add/operator/map";
@@ -10,6 +10,14 @@ import "rxjs/add/operator/catch";
 export class RepositoryDataService {
 
   constructor(private _http: Http) { }
+
+  repositorySwitch(repo: Repository): Observable<Response>{
+    let headers = new Headers({ 'Content-Type': 'application/json; charset=UTF-8' });
+    let options = new RequestOptions({ headers: headers });
+    let url = `${environment.apiUrl}`.concat("/user/","gardncl","/project/",repo.title);
+    console.log(url);
+    return this._http.post(url, options);
+  }
 
   getRepositories(username: string): Observable<Array<Repository>> {
     return this._http.get(`${environment.apiUrl}/user/${username}`)
