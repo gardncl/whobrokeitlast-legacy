@@ -7,10 +7,13 @@ public class RepositoryDto {
 
     public String url;
     public String projectTitle;
+    public Long id;
+    public Boolean tracked;
 
     public RepositoryDto(Repository repository) {
         this.url = repository.getUrl();
         this.projectTitle = repository.getName();
+        this.id = repository.getId();
     }
 
     @Override

@@ -15,7 +15,6 @@ export class RepositoryDataService {
     let headers = new Headers({ 'Content-Type': 'application/json; charset=UTF-8' });
     let options = new RequestOptions({ headers: headers });
     let url = `${environment.apiUrl}`.concat("/user/","gardncl","/project/",repo.title);
-    console.log(url);
     return this._http.post(url, options);
   }
 
@@ -26,11 +25,10 @@ export class RepositoryDataService {
   }
 
   private extractRepositoryList(response: Response): Array<Repository> {
-    console.log(response.json());
     let body = response.json();
     let repositoryList = new Array<Repository>();
     for(let result of body){
-      let repo = new Repository(result.projectTitle,result.url);
+      let repo = new Repository(result.projectTitle,result.url,result.id,result.tracked);
       repositoryList.push(repo);
     }
     return repositoryList;

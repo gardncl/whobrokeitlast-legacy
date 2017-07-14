@@ -17,6 +17,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping(value = "/user")
@@ -33,7 +34,12 @@ public class UserController {
 
     @RequestMapping(value = "/{user}", method = RequestMethod.GET)
     public List<RepositoryDto> getRepositoriesForUser(@PathVariable String user) throws IOException {
-        return githubService.getRepoDtos(user);
+        return githubService
+                .getRepoDtos(user)
+                .stream()
+                .map(this::isTracked)
+                .collect(Collectors.toList());
+
     }
 
     @RequestMapping(value = "/{user}/project/{project}", method = RequestMethod.POST)
@@ -53,5 +59,11 @@ public class UserController {
         } else {
             projectDao.delete(projectEntry.getId());
         }
+    }
+
+    private RepositoryDto isTracked(RepositoryDto repositoryDto) {
+        Project project = projectDao.findOne(repositoryDto.id);
+        repositoryDto.tracked = project != null;
+        return repositoryDto;
     }
 }
