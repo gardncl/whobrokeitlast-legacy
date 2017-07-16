@@ -53,10 +53,11 @@ public class BrokenBuildService {
      * @return Date
      */
     public Developer getLastBreak(Project project) {
-        return project
-                .getDevelopers()
+        return breakDao
+                .findAllByProject_Id(project.getId())
                 .stream()
-                .max(Developer::compareTo)
+                .max(Break::compareTo)
+                .map(Break::getDeveloper)
                 .get();
     }
 

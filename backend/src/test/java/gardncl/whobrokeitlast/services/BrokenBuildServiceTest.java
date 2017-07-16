@@ -21,6 +21,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.NoSuchElementException;
 
+import static java.util.Arrays.asList;
 import static org.junit.Assert.*;
 import static org.mockito.Matchers.any;
 import static org.mockito.Matchers.anyString;
@@ -116,15 +117,21 @@ public class BrokenBuildServiceTest {
 
     @Test
     public void getLastBreak() throws Exception {
-        final Project project = new Project();
         final Developer developer1 = new Developer();
         final Developer developer2 = new Developer();
         final Developer developer3 = new Developer();
 
-        developer1.setLastBreak(new Date(100000));
-        developer2.setLastBreak(new Date(1000000));
-        developer3.setLastBreak(new Date(10000000));
-        project.setDevelopers(Arrays.asList(developer1, developer2, developer3));
+        final Project project = new Project(1L, "whobrokeitlast", developer1);
+        final Break break1 = new Break(developer1, project, new Date(100000));
+        final Break break2 = new Break(developer2, project, new Date(1000000));
+        final Break break3 = new Break(developer3, project, new Date(1000000));
+        final Break break4 = new Break(developer3, project, new Date(10000000));
+
+        final List<Break> breakList = asList(break1, break2, break3, break4);
+
+        project.setDevelopers(asList(developer1, developer2, developer3));
+
+        doReturn(breakList).when(breakDao).findAllByProject_Id(1L);
 
         assertEquals(developer3, brokenBuildService.getLastBreak(project));
     }
