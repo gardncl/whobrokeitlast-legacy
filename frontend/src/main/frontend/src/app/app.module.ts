@@ -19,6 +19,7 @@ import { UiSwitchModule } from '../../node_modules/angular2-ui-switch/src';
 import {RepositoryDataService} from "./services/repository-data.service";
 import { RepoSwitchComponent } from './repo-switch-list/repo-switch/repo-switch.component';
 import { RepoSwitchListComponent } from './repo-switch-list/repo-switch-list.component';
+import {BrokenBuildDataService} from "./services/broken-build.service";
 
 
 @NgModule({
@@ -45,7 +46,7 @@ import { RepoSwitchListComponent } from './repo-switch-list/repo-switch-list.com
       [ProjectGridEntryComponent]
     )
   ],
-  providers: [ProjectDataService, RepositoryDataService],
+  providers: [ProjectDataService, RepositoryDataService, BrokenBuildDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -20,7 +20,6 @@ export class ProjectListComponent implements OnInit {
 
   ngOnInit() {
     this.getProjects(this.offset, this.limit);
-    console.log(this.projects);
   }
 
   getProjects(offset: number, limit: number) {
