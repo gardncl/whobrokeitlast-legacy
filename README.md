@@ -13,3 +13,16 @@ Application for tracking who has broken the current development/test/production 
 * Travis CI  
 * NPM
 * AngularCLI
+
+
+## Usage
+
+Select which projects you would like to track
+![alt text](./project-list.png "Project Page")
+
+Add the webhook address to the travis.yml
+![alt text](./travis-yml.png "Travis-CI")
+
+
+
+Push a broken build and see who broke it last!

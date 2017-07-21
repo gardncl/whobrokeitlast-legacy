@@ -15,21 +15,21 @@ import java.util.stream.Collectors;
 public class GithubService {
 
     public List<Repository> getRepos(String username) throws IOException {
-//        RepositoryService service = new RepositoryService();
-//        return service.getRepositories(username);
+        RepositoryService service = new RepositoryService();
+        return service.getRepositories(username);
 
 
-        //OFFLINE USAGE
-        List<Repository> offlineList = new ArrayList<>();
-        Repository wbil = new Repository();
-        User owner = new User();
-        owner.setName("gardncl");
-        wbil.setId(91140445);
-        wbil.setName("whobrokeitlast");
-        wbil.setOwner(owner);
-        offlineList.add(wbil);
-
-        return offlineList;
+//        //OFFLINE USAGE
+//        List<Repository> offlineList = new ArrayList<>();
+//        Repository wbil = new Repository();
+//        User owner = new User();
+//        owner.setName("gardncl");
+//        wbil.setId(91140445);
+//        wbil.setName("whobrokeitlast");
+//        wbil.setOwner(owner);
+//        offlineList.add(wbil);
+//
+//        return offlineList;
     }
 
 

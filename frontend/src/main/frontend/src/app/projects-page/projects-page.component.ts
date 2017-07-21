@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Repository} from "../models/repository";
+import {RepositoryDataService} from "../services/repository-data.service";
 
 @Component({
   selector: 'app-projects-page',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectsPageComponent implements OnInit {
 
-  constructor() { }
+  currentUser: string = "gardncl";
+  repositories: Repository[];
+
+  constructor(private _repositoryDataService: RepositoryDataService) { }
 
   ngOnInit() {
+    this._repositoryDataService.getRepositories(this.currentUser)
+      .subscribe(responseRepoData => this.repositories = responseRepoData);
   }
 
 }
