@@ -5,7 +5,7 @@ import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @Entity
-public class Break {
+public class Break implements Comparable<Break> {
 
     @Id
     @GeneratedValue
@@ -26,5 +26,14 @@ public class Break {
         this.developer = developer;
         this.project = project;
         this.dateOfBreak = dateOfBreak;
+    }
+
+    public Developer getDeveloper() {
+        return developer;
+    }
+
+    @Override
+    public int compareTo(Break o) {
+        return this.dateOfBreak.compareTo(o.dateOfBreak);
     }
 }

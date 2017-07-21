@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ApplicationHeaderComponent } from './application-header.component';
+import { RepoSwitchListComponent } from './repo-switch-list.component';
 
-describe('ApplicationHeaderComponent', () => {
-  let component: ApplicationHeaderComponent;
-  let fixture: ComponentFixture<ApplicationHeaderComponent>;
+describe('RepoSwitchListComponent', () => {
+  let component: RepoSwitchListComponent;
+  let fixture: ComponentFixture<RepoSwitchListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ApplicationHeaderComponent ]
+      declarations: [ RepoSwitchListComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ApplicationHeaderComponent);
+    fixture = TestBed.createComponent(RepoSwitchListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

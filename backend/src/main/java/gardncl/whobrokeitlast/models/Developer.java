@@ -45,6 +45,14 @@ public class Developer implements Comparable<Developer> {
         this.projects = asList(project);
     }
 
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
     public Long getId() {
         return id;
     }

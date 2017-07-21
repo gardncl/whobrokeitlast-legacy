@@ -1,0 +1,6 @@
+<div class="container">
+  <app-project-list-header (add)="onAddProject($event)" ></app-project-list-header>
+  <app-repo-switch-list [repositories]="repositories"></app-repo-switch-list>
+  <button onclick="loadData()">Load Data</button>
+  <button onclick="logData()">Log Data</button>
+</div>
