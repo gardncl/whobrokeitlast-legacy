@@ -50,7 +50,6 @@ public class BrokenBuildServiceTest {
     public void setup() {
         MockitoAnnotations.initMocks(this);
         breakDto = new BreakDto("gardncl", "whobrokeitlast", "kockles","kockles@gmail.com");
-<<<<<<< HEAD
     }
 
     @Test(expected = NoSuchElementException.class)
@@ -115,72 +114,6 @@ public class BrokenBuildServiceTest {
                 .save(developer);
     }
 
-=======
-    }
-
-    @Test(expected = NoSuchElementException.class)
-    public void saveBreakProjectDoesNotExist() {
-        doReturn(null)
-                .when(projectDao)
-                .findByProjectTitle(anyString());
-
-
-        brokenBuildService.saveBreak(breakDto);
-    }
-
-    @Test
-    public void saveBreakDeveloperExists() {
-        Project project = new Project();
-        Developer developer = new Developer();
-        doReturn(project)
-                .when(projectDao)
-                .findByProjectTitle(anyString());
-
-        doReturn(developer)
-                .when(developerDao)
-                .getByUserName(anyString());
-
-        doReturn(null)
-                .when(developerDao)
-                .save(any(Developer.class));
-
-        doReturn(null)
-                .when(breakDao)
-                .save(any(Break.class));
-
-        brokenBuildService.saveBreak(breakDto);
-
-        verify(developerDao,times(1))
-                .save(developer);
-    }
-
-    @Test
-    public void saveBreak() {
-        Project project = new Project();
-        Developer developer = new Developer();
-        doReturn(project)
-                .when(projectDao)
-                .findByProjectTitle(anyString());
-
-        doReturn(null)
-                .when(developerDao)
-                .getByUserName(anyString());
-
-        doReturn(null)
-                .when(developerDao)
-                .save(any(Developer.class));
-
-        doReturn(null)
-                .when(breakDao)
-                .save(any(Break.class));
-
-        brokenBuildService.saveBreak(breakDto);
-
-        verify(developerDao,times(0))
-                .save(developer);
-    }
-
->>>>>>> develop
 
     @Test
     public void getLastBreak() throws Exception {
