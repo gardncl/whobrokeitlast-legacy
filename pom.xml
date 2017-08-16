@@ -25,6 +25,7 @@
 	</properties>
 
 	<modules>
+		<module>jsocialite</module>
 		<module>frontend</module>
 		<module>backend</module>
 	</modules>
