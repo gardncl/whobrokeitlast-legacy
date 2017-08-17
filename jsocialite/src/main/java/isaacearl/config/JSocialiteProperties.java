@@ -1,5 +1,6 @@
 package isaacearl.config;
 
+
 public class JSocialiteProperties {
 
     private Github github;
