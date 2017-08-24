@@ -1,7 +1,17 @@
 package isaacearl.config;
 
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
+@Configuration
+@PropertySource("classpath:application.properties")
 public class JSocialiteProperties {
+
+    public JSocialiteProperties() {
+        Github github = new Github();
+        github.setClientId();
+        this.github = github;
+    }
 
     private Github github;
 
